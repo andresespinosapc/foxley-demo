@@ -60,7 +60,14 @@ export function Portfolio() {
             >
               {/* Thumbnail */}
               <div className="relative aspect-video bg-slate-800 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-blue-800/20 flex items-center justify-center">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-blue-800/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Play className="w-6 h-6 text-white ml-0.5" />
                   </div>
