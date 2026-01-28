@@ -108,18 +108,6 @@ export function Hero() {
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
-
-                    {/* Content overlay */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 bg-gradient-to-t from-stone-950/70 via-stone-950/30 to-transparent">
-                      <p className="text-2xl font-display italic drop-shadow-lg">Tu contenido</p>
-                      <p className="text-lg font-light opacity-90 drop-shadow-lg">brillando 24/7</p>
-                    </div>
-
-                    {/* Decorative elements */}
-                    <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-white/50" />
-                    <div className="absolute bottom-4 left-4 text-xs font-mono text-white/70">
-                      LIVE
-                    </div>
                   </div>
                 </div>
 
