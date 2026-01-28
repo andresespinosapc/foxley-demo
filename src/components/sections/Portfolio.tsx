@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { getFeaturedProjects } from "@/data/projects";
 import { ArrowRight, ArrowUpRight, Play } from "lucide-react";
@@ -83,16 +84,13 @@ export function Portfolio() {
                     isLarge ? "aspect-[4/3]" : "aspect-video"
                   )}
                 >
-                  {/* Gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 via-amber-500/10 to-orange-500/20" />
-
-                  {/* Pattern overlay */}
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage: `radial-gradient(circle at 2px 2px, rgba(245,158,11,0.3) 1px, transparent 0)`,
-                      backgroundSize: "24px 24px",
-                    }}
+                  {/* Thumbnail image */}
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes={isLarge ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 1024px) 100vw, 42vw"}
                   />
 
                   {/* Play button */}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { LeadFormSheet } from "@/components/forms/LeadFormSheet";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
@@ -98,21 +99,15 @@ export function Hero() {
                 {/* Screen bezel */}
                 <div className="bg-stone-950 rounded-xl p-1">
                   {/* Screen content */}
-                  <div className="aspect-[4/3] bg-gradient-to-br from-amber-600 via-amber-500 to-orange-500 rounded-lg overflow-hidden relative scanlines animate-flicker">
-                    {/* Content overlay */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-stone-950 p-8">
-                      <div className="w-20 h-20 mb-6 rounded-2xl bg-stone-950/20 backdrop-blur-sm flex items-center justify-center">
-                        <Play className="w-10 h-10" />
-                      </div>
-                      <p className="text-2xl font-display italic">Tu contenido</p>
-                      <p className="text-lg font-light opacity-80">brillando 24/7</p>
-                    </div>
-
-                    {/* Decorative elements */}
-                    <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-stone-950/30" />
-                    <div className="absolute bottom-4 left-4 text-xs font-mono text-stone-950/50">
-                      LIVE
-                    </div>
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden relative scanlines animate-flicker">
+                    {/* Image */}
+                    <Image
+                      src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80"
+                      alt="Digital signage en centro comercial"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
                   </div>
                 </div>
 
