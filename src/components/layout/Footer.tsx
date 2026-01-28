@@ -32,10 +32,10 @@ export function Footer() {
                 <span className="text-stone-100 font-semibold text-lg block">
                   Foxley
                 </span>
-                <span className="text-stone-500 text-sm">Digital Signage</span>
+                <span className="text-stone-400 text-sm">Digital Signage</span>
               </div>
             </Link>
-            <p className="text-stone-500 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-stone-400 text-sm leading-relaxed mb-6 max-w-xs">
               {companyData.description}
             </p>
 
@@ -45,7 +45,7 @@ export function Footer() {
                 href={companyData.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-500 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -60,7 +60,7 @@ export function Footer() {
                 href={companyData.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-500 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
                 aria-label="Instagram"
               >
                 <svg
@@ -84,7 +84,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-stone-500 hover:text-amber-400 transition-colors text-sm inline-flex items-center gap-1 group"
+                    className="text-stone-400 hover:text-amber-400 transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {item.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -102,13 +102,13 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-amber-500/70" />
-                <span className="text-stone-500">{companyData.address}</span>
+                <span className="text-stone-400">{companyData.address}</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="w-4 h-4 flex-shrink-0 text-amber-500/70" />
                 <a
                   href={`tel:${companyData.phone.replace(/\s/g, "")}`}
-                  className="text-stone-500 hover:text-amber-400 transition-colors"
+                  className="text-stone-400 hover:text-amber-400 transition-colors"
                 >
                   {companyData.phone}
                 </a>
@@ -117,7 +117,7 @@ export function Footer() {
                 <Mail className="w-4 h-4 flex-shrink-0 text-amber-500/70" />
                 <a
                   href={`mailto:${companyData.email}`}
-                  className="text-stone-500 hover:text-amber-400 transition-colors"
+                  className="text-stone-400 hover:text-amber-400 transition-colors"
                 >
                   {companyData.email}
                 </a>
@@ -137,7 +137,7 @@ export function Footer() {
                     href={company.url}
                     target="_blank"
                     rel="noopener"
-                    className="text-stone-500 hover:text-amber-400 transition-colors text-sm inline-flex items-center gap-1 group"
+                    className="text-stone-400 hover:text-amber-400 transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {company.name}
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -150,20 +150,20 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-stone-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-stone-600">
+          <p className="text-sm text-stone-400">
             © {new Date().getFullYear()} {companyData.name}. Todos los derechos
             reservados.
           </p>
           <div className="flex gap-6 text-sm">
             <Link
               href="/privacidad"
-              className="text-stone-600 hover:text-stone-400 transition-colors"
+              className="text-stone-400 hover:text-stone-400 transition-colors"
             >
               Política de Privacidad
             </Link>
             <Link
               href="/terminos"
-              className="text-stone-600 hover:text-stone-400 transition-colors"
+              className="text-stone-400 hover:text-stone-400 transition-colors"
             >
               Términos de Uso
             </Link>

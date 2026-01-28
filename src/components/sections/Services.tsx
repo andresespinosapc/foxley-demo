@@ -51,8 +51,11 @@ export function Services() {
                 "hover:bg-stone-900/50"
               )}
             >
-              {/* Number */}
-              <span className="absolute top-6 right-6 text-5xl font-display text-stone-800/50 group-hover:text-amber-500/20 transition-colors duration-500">
+              {/* Number - decorative, hidden from screen readers */}
+              <span
+                aria-hidden="true"
+                className="absolute top-6 right-6 text-5xl font-display text-stone-500 group-hover:text-amber-500/30 transition-colors duration-500"
+              >
                 {String(index + 1).padStart(2, "0")}
               </span>
 
@@ -65,7 +68,7 @@ export function Services() {
               <h3 className="text-xl font-semibold text-stone-100 mb-3 group-hover:text-amber-50 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-stone-500 text-sm mb-6 leading-relaxed group-hover:text-stone-400 transition-colors">
+              <p className="text-stone-400 text-sm mb-6 leading-relaxed group-hover:text-stone-300 transition-colors">
                 {service.description}
               </p>
 
