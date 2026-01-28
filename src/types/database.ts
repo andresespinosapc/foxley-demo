@@ -1,3 +1,11 @@
+export type Json =
+  | string
+  | number
+  | boolean
+  | null
+  | { [key: string]: Json | undefined }
+  | Json[];
+
 export interface Database {
   public: {
     Tables: {
@@ -59,6 +67,7 @@ export interface Database {
           updated_at?: string;
           featured?: boolean;
         };
+        Relationships: [];
       };
       services: {
         Row: {
@@ -85,6 +94,7 @@ export interface Database {
           icon?: string | null;
           features?: string[] | null;
         };
+        Relationships: [];
       };
       leads: {
         Row: {
@@ -111,7 +121,12 @@ export interface Database {
           correo?: string;
           created_at?: string;
         };
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 }
