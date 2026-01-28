@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { companyData } from "@/data/company";
 
-const inter = Inter({
-  variable: "--font-inter",
+const fraunces = Fraunces({
+  variable: "--font-display",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const outfit = Outfit({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -81,7 +88,7 @@ export default function RootLayout({
       <head>
         <OrganizationJsonLd />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-slate-950`}>
+      <body className={`${fraunces.variable} ${outfit.variable} font-sans antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />
