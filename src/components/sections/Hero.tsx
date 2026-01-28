@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { LeadFormSheet } from "@/components/forms/LeadFormSheet";
 import { ArrowRight, Play } from "lucide-react";
@@ -79,13 +80,19 @@ export function Hero() {
             <div className="relative">
               {/* Main screen */}
               <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-2 shadow-2xl shadow-black/50">
-                <div className="aspect-video bg-gradient-to-br from-sky-600 to-blue-800 rounded-xl overflow-hidden flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
-                      <Play className="w-8 h-8" />
-                    </div>
-                    <p className="text-lg font-medium">Tu contenido aquí</p>
-                    <p className="text-sm opacity-75">Digital Signage Premium</p>
+                <div className="aspect-video bg-slate-900 rounded-xl overflow-hidden relative">
+                  <Image
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
+                    alt="Digital Signage en acción"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <p className="text-lg font-medium">Digital Signage Premium</p>
+                    <p className="text-sm opacity-75">Contenido dinámico en tiempo real</p>
                   </div>
                 </div>
               </div>
