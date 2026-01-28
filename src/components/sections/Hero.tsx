@@ -89,11 +89,6 @@ export function Hero() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <p className="text-lg font-medium">Digital Signage Premium</p>
-                    <p className="text-sm opacity-75">Contenido dinámico en tiempo real</p>
-                  </div>
                 </div>
               </div>
 
