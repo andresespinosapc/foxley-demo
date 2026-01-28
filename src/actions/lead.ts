@@ -1,6 +1,7 @@
 "use server";
 
 import { leadFormSchema, LeadFormData } from "@/lib/validations";
+import { supabase } from "@/lib/supabase";
 
 interface ActionResult {
   success: boolean;
@@ -23,12 +24,20 @@ export async function submitLeadForm(
   const { nombre, cargo, empresa, correo } = validatedData.data;
 
   try {
-    // In production, you would save the lead to a database or CRM
-    // Example: Supabase, Airtable, HubSpot, etc.
-    console.log("Lead captured:", { nombre, cargo, empresa, correo });
+    const { error } = await supabase.from("leads").insert({
+      nombre,
+      cargo,
+      empresa,
+      correo,
+    });
 
-    // Simulate processing delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    if (error) {
+      console.error("Error al guardar lead en Supabase:", error);
+      return {
+        success: false,
+        message: "Hubo un error. Por favor intenta nuevamente.",
+      };
+    }
 
     return {
       success: true,
