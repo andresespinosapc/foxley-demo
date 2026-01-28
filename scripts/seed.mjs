@@ -186,17 +186,16 @@ async function seed() {
     console.log(`✅ Inserted ${servicesData.length} services`);
   }
 
-  // Insert leads
+  // Insert leads (no .select() because we don't have SELECT policy for anon)
   console.log("👥 Inserting sample leads...");
-  const { data: leadsData, error: leadsError } = await supabase
+  const { error: leadsError } = await supabase
     .from("leads")
-    .insert(leads)
-    .select();
+    .insert(leads);
 
   if (leadsError) {
     console.error("❌ Error inserting leads:", leadsError.message);
   } else {
-    console.log(`✅ Inserted ${leadsData.length} leads`);
+    console.log(`✅ Inserted ${leads.length} leads`);
   }
 
   console.log("\n🎉 Seed completed!");
